@@ -343,6 +343,15 @@
         }
 
 
+            $('.transverse').find('a').click(function(){
+                $('.transverse').find('a').removeClass('active');
+                $(this).addClass('active');
+            })
+
+            $('.portrait').find('a').click(function(){
+                $('.portrait').find('a').removeClass('active');
+                $(this).addClass('active');
+            })
     })(jQuery);
 
 </script>
