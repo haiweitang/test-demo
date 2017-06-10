@@ -1,5 +1,8 @@
-@import url(base.css);
+@import url(../css/base.css);
 @charset "utf-8";
+/* ==========
+    工具
+  ==========*/
 body {
   background-color: #fff;
 }
@@ -15,6 +18,17 @@ body {
   background-color: transparent;
   border: 0;
 }
+.small-screen {
+  font-size: 20px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+.small-screen span {
+  font-size: 12px;
+}
+/* -------------
+        头部
+   -------------*/
 .header {
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -57,23 +71,44 @@ body {
   color: #E51A49;
   text-decoration: underline;
 }
+@media (max-width: 479px) {
+  .header .header-content .hide {
+    display: none;
+  }
+}
+/* -------------
+       导航部分
+  -------------*/
 .nav {
   width: 100%;
   padding: 5px 0;
 }
 .nav .nav-content {
-  width: 100%;
-  padding: 0 5%;
+  max-width: 1200px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
+  position: relative;
 }
 .nav .log {
   width: 150px;
   height: 50px;
-  background: url(IMG/LOG.png) no-repeat center center / cover;
+  background: url(../IMG/LOG.png) no-repeat center center / cover;
   float: left;
+}
+.nav .iconfont {
+  display: none;
+  float: right;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: #E51A49;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  line-height: 35px;
+  outline: none;
 }
 .nav .nav-list {
   float: right;
@@ -98,24 +133,89 @@ body {
   color: #E51A49;
   border-bottom: 1px solid #E51A49;
 }
+.nav .portrait {
+  display: none;
+  position: absolute;
+  padding: 0 15px;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  z-index: 3;
+  border-top: 1px solid #E8E8E8;
+  box-sizing: border-box;
+  height: 0px;
+  overflow: hidden;
+  width: 100%;
+}
+.nav .portrait li {
+  float: none;
+  margin: 0;
+  margin-top: 0;
+  border-bottom: 1px solid #F0F0F0;
+  box-sizing: border-box;
+}
+.nav .portrait li a {
+  height: 40px;
+  line-height: 40px;
+}
+.nav .portrait li .active {
+  border-bottom: none;
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .nav .nav-content {
+    padding: 0 2%;
+  }
+  .nav .log {
+    width: 100px;
+    height: 35px;
+  }
+  .nav .iconfont {
+    display: block;
+  }
+  .nav .transverse {
+    display: none;
+  }
+  .nav .portrait {
+    display: block;
+  }
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 480px) {
+  .nav .nav-content {
+    padding: 0 2%;
+  }
+  .nav .log {
+    width: 100px;
+    height: 35px;
+  }
+  .nav .iconfont {
+    display: block;
+  }
+  .nav .transverse {
+    display: none;
+  }
+  .nav .portrait {
+    display: block;
+  }
+}
+/* ----------
+  轮播图区域
+   ----------*/
 .carousel-figure {
   width: 100%;
   height: 400px;
-  background: url(IMG/header_bg.png) no-repeat center center / cover;
+  background: url(../IMG/header_bg.png) no-repeat center center / cover;
   position: relative;
 }
 .carousel-figure .consultation {
-  width: 500px;
-  height: 200px;
   text-align: center;
   color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -250px;
+  margin: 0 auto;
 }
 .carousel-figure .consultation h2 {
-  font-size: 63px;
+  font-size: 50px;
+  padding-top: 80px;
 }
 .carousel-figure .consultation p {
   font-size: 16px;
@@ -141,20 +241,47 @@ body {
   color: #5e5e5e;
   font-weight: bold;
 }
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .carousel-figure .consultation h2 {
+    font-size: 40px;
+  }
+  .carousel-figure .consultation p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 479px) {
+  .carousel-figure .consultation {
+    width: 98%;
+  }
+  .carousel-figure .consultation h2 {
+    font-size: 30px;
+  }
+  .carousel-figure .consultation p {
+    font-size: 12px;
+  }
+  .carousel-figure .consultation div {
+    width: 150px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+}
+/*-------
+
+  -------*/
 .business {
   background-color: #fff;
   max-width: 1200px;
   margin: 0 auto;
 }
 .business .business-content {
-  width: 1200px;
+  width: 100%;
   padding: 50px 0;
   margin: 0 auto;
 }
 .business .business-list {
-  width: 240px;
+  width: 33.33333%;
   float: left;
-  margin: 0 80px;
 }
 .business .business-list .iconfont {
   font-size: 70px;
@@ -184,7 +311,7 @@ body {
 }
 .business .business-list .text span {
   display: inline-block;
-  padding: 1px 7px;
+  padding: 0 7px;
   border: 1px solid #248888;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -196,6 +323,26 @@ body {
 .business .business-list .text p {
   color: #999;
 }
+@media (max-width: 700px) {
+  .business .business-list {
+    width: 66%;
+    margin: 0 17% 20px;
+  }
+  .business .business-list .iconfont {
+    font-size: 50px;
+  }
+  .business .business-list .text {
+    display: inline-block;
+    padding-top: 0;
+  }
+  .business .business-list .text h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+}
+/*-------
+    合同服务部分
+  -------*/
 .service-title {
   font-size: 25px;
   height: 50px;
@@ -203,6 +350,7 @@ body {
   color: #777;
   text-align: left;
   margin-bottom: 20px;
+  margin-left: 1%;
 }
 .service-title span {
   color: #ccc;
@@ -248,11 +396,14 @@ body {
   color: #323232;
 }
 .service-content .service-list .list-text {
-  height: 100px;
+  width: 100%;
+  height: 80px;
   margin-top: 10px;
   text-align: left;
   line-height: 26px;
   color: #656565;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .service-content .service-list .more {
   width: 130px;
@@ -260,7 +411,7 @@ body {
   display: block;
   line-height: 28px;
   border: 1px solid #248888;
-  margin: 0 auto;
+  margin: 30px auto 0;
   color: #248888;
   -webkit-transition: .5s;
   -moz-transition: .5s;
@@ -272,6 +423,45 @@ body {
   background-color: #248888;
   color: #fff;
 }
+/*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .service-content .service-list {
+    width: 50%;
+  }
+  .service-content .service-list .more {
+    margin: 20px auto 0;
+  }
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .service-content .service-list {
+    width: 50%;
+  }
+  .service-content .service-list .more {
+    margin: 10px auto 0;
+  }
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+  .service-title {
+    font-size: 20px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  .service-title span {
+    font-size: 12px;
+  }
+  .service-content .service-list {
+    width: 100%;
+    height: 330px;
+  }
+  .service-content .service-list .more {
+    margin: 10px auto 0;
+  }
+}
+/* ---------
+    律师团队成员
+   --------- */
 .team {
   width: 100%;
 }
@@ -287,6 +477,7 @@ body {
   color: #777;
   text-align: left;
   margin-bottom: 20px;
+  margin-left: 1%;
 }
 .team .team-content .team-title span {
   color: #ccc;
@@ -295,7 +486,7 @@ body {
 }
 .team .team-content .team-member {
   width: 25%;
-  padding: 30px 25px;
+  padding: 30px 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -305,17 +496,17 @@ body {
 .team .team-content .team-member .photo {
   width: 100%;
   height: 250px;
-  background: url(IMG/1.jpg) no-repeat top center / cover;
+  background: url(../IMG/1.jpg) no-repeat top center / cover;
   margin-bottom: 30px;
 }
 .team .team-content .team-member .photo2 {
-  background: url(IMG/2.jpg) no-repeat top center / cover;
+  background: url(../IMG/2.jpg) no-repeat top center / cover;
 }
 .team .team-content .team-member .photo3 {
-  background: url(IMG/3.jpg) no-repeat top center / cover;
+  background: url(../IMG/3.jpg) no-repeat top center / cover;
 }
 .team .team-content .team-member .photo4 {
-  background: url(IMG/4.jpg) no-repeat top center / cover;
+  background: url(../IMG/4.jpg) no-repeat top center / cover;
 }
 .team .team-content .team-member .name {
   font-size: 18px;
@@ -333,8 +524,33 @@ body {
 }
 .team .team-content .team-member .describe {
   margin-top: 10px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #777;
 }
+/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .team .team-content .team-member {
+    padding: 30px 10px;
+  }
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .team .team-content .team-member {
+    width: 50%;
+    padding: 30px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .team .team-content .team-member {
+    width: 100%;
+    padding: 30px 10px;
+  }
+}
+/* -------------
+    案例新闻公告
+   ------------- */
 .legal-cases {
   width: 100%;
   background-color: #eee;
@@ -351,6 +567,7 @@ body {
   color: #777;
   text-align: left;
   margin-bottom: 20px;
+  margin-left: 1%;
 }
 .legal-cases .cases-content .cases-title span {
   color: #ccc;
@@ -360,7 +577,7 @@ body {
 .legal-cases .cases-content .box {
   width: 48%;
   float: left;
-  margin-right: 2%;
+  margin: 0 1%;
   margin-top: 50px;
 }
 .legal-cases .cases-content .tab {
@@ -391,7 +608,7 @@ body {
 .legal-cases .cases-content .left .img {
   width: 100%;
   height: 200px;
-  background: url(IMG/bg1.jpg) no-repeat top left;
+  background: url(../IMG/bg1.jpg) no-repeat top left;
   margin-bottom: 20px;
 }
 .legal-cases .cases-content .left h3 {
@@ -399,6 +616,10 @@ body {
   font-size: 18px;
   font-weight: normal;
   line-height: 46px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .legal-cases .cases-content .left p {
   width: 90%;
@@ -451,7 +672,7 @@ body {
   color: #989898;
   border-right: 1px solid #E2E2E2;
   text-align: right;
-  padding-right: 15px;
+  padding-right: 10px;
   float: left;
 }
 .legal-cases .cases-content .right .list time span {
@@ -460,7 +681,8 @@ body {
 }
 .legal-cases .cases-content .right .list .text {
   width: 80%;
-  float: right;
+  margin-left: 15px;
+  float: left;
   cursor: pointer;
 }
 .legal-cases .cases-content .right .list .text h3 {
@@ -468,6 +690,9 @@ body {
   line-height: 26px;
   font-weight: normal;
   color: #666;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .legal-cases .cases-content .right .list .text p {
   font-size: 14px;
@@ -476,6 +701,63 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+@media (max-width: 991px) {
+  .legal-cases .cases-content .box {
+    width: 98%;
+    margin: 0 1%;
+    margin-top: 20px;
+  }
+  .legal-cases .cases-content .left .tab-box {
+    text-align: left;
+  }
+  .legal-cases .cases-content .left .tab-box .tab {
+    margin-right: 4%;
+    margin-left: 0;
+  }
+  .legal-cases .cases-content .right {
+    margin-top: 70px;
+  }
+  .legal-cases .cases-content .right .list {
+    margin-bottom: 15px;
+  }
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+  .legal-cases .cases-content .box {
+    width: 96%;
+    margin: 0 2%;
+    margin-top: 20px;
+  }
+  .legal-cases .cases-content .left .img {
+    background: url(../IMG/bg1.jpg) no-repeat center center;
+  }
+  .legal-cases .cases-content .left h3 {
+    padding-right: 30px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .legal-cases .cases-content .right {
+    margin-top: 70px;
+  }
+  .legal-cases .cases-content .right .list {
+    margin-bottom: 20px;
+  }
+  .legal-cases .cases-content .right .list time {
+    width: 100px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  .legal-cases .cases-content .right .list .text {
+    width: 95%;
+    margin-left: 0px;
+  }
+  .legal-cases .cases-content .right .list .text h3 {
+    padding-right: 30px;
+  }
+}
+/* -------------
+    合作伙伴
+   ------------- */
 .cooperation {
   width: 100%;
 }
@@ -491,6 +773,7 @@ body {
   color: #777;
   text-align: left;
   margin-bottom: 20px;
+  margin-left: 1%;
 }
 .cooperation .cooperation-content .cooperation-title span {
   color: #ccc;
@@ -508,23 +791,57 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: url(IMG/cooperation.png) no-repeat top left / cover;
-  background-size: 280px 223px;
+  background: url(../IMG/cooperation1.png) no-repeat top left / contain;
+  background-size: 198px 223px;
 }
 .cooperation .cooperation-content .link-box .link + .link {
   margin-left: 2%;
 }
 .cooperation .cooperation-content .link-box .link1 {
-  background-position: 0 0;
+  background: url(../IMG/cooperation1.jpg) no-repeat top left / contain;
 }
 .cooperation .cooperation-content .link-box .link2 {
-  background-position: 0 -56px;
+  background: url(../IMG/cooperation2.jpg) no-repeat top left / contain;
 }
 .cooperation .cooperation-content .link-box .link3 {
-  background-position: 0 -112px;
+  background: url(../IMG/cooperation3.jpg) no-repeat top left / contain;
 }
 .cooperation .cooperation-content .link-box .link4 {
-  background-position: 0 -168px;
+  background: url(../IMG/cooperation4.jpg) no-repeat top left / contain;
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (max-width: 767px) {
+  .cooperation .cooperation-content .cooperation-title {
+    font-size: 20px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  .cooperation .cooperation-content .cooperation-title span {
+    font-size: 12px;
+  }
+  .cooperation .cooperation-content .link-box {
+    width: 98%;
+    padding: 0 1%;
+    margin-top: 0px;
+  }
+  .cooperation .cooperation-content .link-box .link {
+    width: 20%;
+    height: 30px;
+  }
+  .cooperation .cooperation-content .link-box .link + .link {
+    margin-left: 2%;
+  }
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+  .cooperation .cooperation-content .link-box {
+    width: 98%;
+    padding: 0 1%;
+  }
+  .cooperation .cooperation-content .link-box .link {
+    width: 46%;
+    margin-bottom: 20px;
+  }
 }
 .footer {
   width: 100%;
@@ -535,34 +852,101 @@ body {
   margin: 0 auto;
   padding: 60px 0;
 }
-.footer .footer-content .log {
+.footer .footer-content .top-tel {
+  line-height: 60px;
+  border-bottom: 1px solid #505A64;
+  width: 98%;
+  margin: 0 1% 20px;
+  display: none;
+}
+.footer .footer-content .top-tel .iconfont {
+  font-size: 28px;
+  color: #fff;
+  margin: 0 10px;
+}
+.footer .footer-content .top-tel span {
+  color: #fff;
+  font-size: 18px;
+}
+.footer .footer-content .contact {
+  float: left;
+  text-align: center;
+}
+.footer .footer-content .contact .log {
   width: 150px;
   height: 50px;
-  background: url(IMG/LOG.png) no-repeat center center / cover;
-  float: left;
+  background: url(../IMG/LOG.png) no-repeat center center / cover;
+}
+.footer .footer-content .contact .bottom-tel {
+  margin-top: 20px;
+}
+.footer .footer-content .contact .iconfont {
+  font-size: 40px;
+  color: #B20A29;
+}
+.footer .footer-content .contact p {
+  color: #B20A29;
+  font-size: 20px;
 }
 .footer .footer-content ul {
   width: 70%;
   float: right;
 }
+.footer .footer-content ul li:last-child {
+  border: none;
+}
 .footer .footer-content ul li {
   float: left;
   width: 18%;
+  height: 180px;
   margin-left: 2%;
+  border-right: 1px solid #505A64;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .footer .footer-content ul li dt {
   color: #ACACAC;
   font-size: 16px;
   width: 80px;
-  height: 50px;
-  line-height: 50px;
+  padding-bottom: 20px;
   border-bottom: 2px solid #51C1CF;
   margin-bottom: 15px;
 }
 .footer .footer-content ul li a {
   color: #B8B6B9;
   line-height: 30px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/
 /*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (max-width: 767px) {
+  .footer .footer-content {
+    padding-top: 0;
+  }
+  .footer .footer-content .top-tel {
+    display: block;
+  }
+  .footer .footer-content .contact {
+    display: none;
+  }
+  .footer .footer-content ul {
+    width: 100%;
+  }
+  .footer .footer-content ul li {
+    width: 18%;
+    margin-left: 2%;
+  }
+}
 /*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 650px) {
+  .footer .footer-content ul .hide {
+    display: none;
+  }
+  .footer .footer-content ul li {
+    width: 30%;
+    margin-left: 3.3333%;
+  }
+}

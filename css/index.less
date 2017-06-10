@@ -1,0 +1,1117 @@
+@charset "utf-8";
+@import url(../css/base.css);
+
+
+/* ==========
+    工具
+  ==========*/
+
+@color: #248888;
+
+body {
+  background-color: #fff;
+}
+
+.clearfix:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.small-screen {
+  font-size: 20px;
+  height: 50px;
+  margin-bottom: 20px;
+
+  span {
+    font-size: 12px;
+  }
+}
+
+/* -------------
+        头部
+   -------------*/
+
+.header {
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.header .header-content {
+  padding: 0 5%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 30px;
+  color: #eee;
+  i {
+    font-size: 16px;
+  }
+  p {
+    float: left;
+    .tel {
+      color: #eeeeee;
+    }
+    .tel:hover {
+      color: #E51A49;
+      text-decoration: underline;
+
+    }
+  }
+  div {
+    float: right;
+    a {
+      color: #eee;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    i {
+      font-size: 16px;
+    }
+
+    a:hover {
+      color: #E51A49;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .header .header-content .hide {
+    display: none;
+  }
+}
+
+/* -------------
+       导航部分
+  -------------*/
+
+.nav {
+  width: 100%;
+  padding: 5px 0;
+  .nav-content {
+    max-width: 1200px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    //height: 60px;
+  }
+
+  .log{
+    width: 150px;
+    height:50px;
+    background: url(../IMG/LOG.png) no-repeat center center/cover;
+    float: left;
+
+  }
+
+
+  .iconfont {
+    display: none;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #E51A49;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+    outline: none;
+  }
+
+  .nav-list {
+    float: right;
+    font-size:14px;
+
+    li {
+      float: left;
+      margin-left: 20px;
+      margin-top: 15px;
+      a{
+        color: #555;
+        display: block;
+        height: 20px;
+        line-height: 20px;
+      }
+      a:hover {
+        color: #E51A49;
+        border-bottom: 1px solid #E51A49;
+      }
+      .active {
+        color: #E51A49;
+        border-bottom: 1px solid #E51A49;
+      }
+    }
+  }
+
+  .portrait {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 0 15px;
+    right: 0;
+    top: 40px;
+    background: #fff;
+    z-index: 3;
+    border-top: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    height: 0px;
+    overflow: hidden;
+    width: 100%;
+
+    li {
+      float: none;
+      margin: 0;
+      margin-top: 0;
+      border-bottom: 1px solid #F0F0F0;
+      box-sizing: border-box;
+
+      a{
+        height: 40px;
+        line-height: 40px;
+      }
+      .active {
+        border-bottom: none;
+      }
+    }
+  }
+
+}
+
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+
+  .nav {
+      .nav-content {
+        padding: 0 2%;
+      }
+     .log{
+       width: 100px;
+       height: 35px;
+     }
+     .iconfont {
+       display: block;
+
+     }
+     .transverse {
+       display: none;
+     }
+
+     .portrait {
+       display: block;
+     }
+   }
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 480px) {
+  .nav {
+    .nav-content {
+      padding: 0 2%;
+    }
+    .log{
+      width: 100px;
+      height: 35px;
+    }
+    .iconfont {
+      display: block;
+    }
+    .transverse {
+      display: none;
+    }
+
+    .portrait {
+      display: block;
+    }
+  }
+
+}
+/* ----------
+  轮播图区域
+   ----------*/
+.carousel-figure {
+  width: 100%;
+  height: 400px;
+  background: url(../IMG/header_bg.png) no-repeat center center/cover;
+  position: relative;
+
+  .consultation {
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 50px;
+      padding-top: 80px;
+    }
+    p {
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+    div {
+      width: 200px;
+      line-height: 50px;
+      text-align: center;
+      border: none;
+      background: #e03337;
+      border-radius: 10px;
+      box-shadow: 2px 6px 2px #8e1114;
+      color: #fff;
+      font-size: 20px;
+      margin: 20px auto 0;
+      
+      a {
+        color: #fff;
+      }
+      a:hover {
+        color: #5e5e5e;
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .carousel-figure {
+    .consultation{
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .carousel-figure {
+    .consultation{
+      width: 98%;
+      h2 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 12px;
+      }
+      div {
+        width: 150px;
+        line-height: 40px;
+        font-size: 16px;
+
+      }
+    }
+  }
+}
+/*-------
+
+  -------*/
+.business {
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .business-content {
+    width: 100%;
+    padding: 50px 0;
+    margin: 0 auto;
+  }
+
+  .business-list {
+    width: 33.33333%;
+    float: left;
+    .iconfont {
+      font-size: 70px;
+      color: #248888;
+      float: left;
+    }
+    .text {
+      display: inline-block;
+      height: 70px;
+      float: left;
+      width: 150px;
+      padding: 8px 0 0 8px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+
+      h3 {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 18px;
+
+        a {
+          color: #777;
+        }
+        a:hover {
+          color: @color;
+        }
+      }
+
+      span {
+        display: inline-block;
+        padding: 0 7px;
+        border: 1px solid @color;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        font-size: 10px;
+        vertical-align: 2px;
+        color: @color;
+      }
+      p {
+        color: #999;
+      }
+    }
+
+  }
+}
+
+
+@media (max-width: 700px) {
+  .business {
+    .business-list {
+      width: 66%;
+      margin: 0 17% 20px;
+      .iconfont {
+        font-size: 50px;
+      }
+      .text {
+        display: inline-block;
+        padding-top: 0;
+
+        h3 {
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
+
+      }
+
+    }
+  }
+}
+
+/*-------
+    合同服务部分
+  -------*/
+
+.service-title {
+  font-size: 25px;
+  height: 50px;
+  border-bottom: 1px solid #DCDCDC;
+  color: #777;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 1%;
+
+  span {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+
+.icon-box {
+  width: 92px;
+  height: 92px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  text-align: center;
+  line-height: 92px;
+
+  .iconfont {
+    font-size: 62px;
+    color: @color;
+  }
+}
+
+.service {
+  width: 100%;
+  background-color: #eee;
+}
+.service-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+
+
+
+  .service-list {
+    width: 25%;
+    height: 350px;
+    padding: 30px 25px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+
+
+
+    .list-title {
+      font-size: 16px;
+      font-weight: normal;
+      color: #323232;
+    }
+
+    .list-text {
+      width: 100%;
+      height: 80px;
+      margin-top: 10px;
+      text-align: left;
+      line-height: 26px;
+      color: #656565;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .more {
+      width: 130px;
+      height: 28px;
+      display: block;
+      line-height: 28px;
+      border: 1px solid @color;
+      margin: 30px auto 0;
+      color: @color;
+      -webkit-transition: .5s;
+      -moz-transition: .5s;
+      -ms-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s;
+    }
+
+    .more:hover {
+      background-color: @color;
+      color: #fff;
+    }
+  }
+
+}
+
+/*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .service-content {
+    .service-list {
+      width: 50%;
+
+      .more {
+        margin: 20px auto 0;
+      }
+    }
+  }
+}
+
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .service-content {
+    .service-list {
+      width: 50%;
+      .more {
+        margin: 10px auto 0;
+      }
+    }
+  }
+}
+
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+    .service-title {
+      font-size: 20px;
+      height: 50px;
+      margin-bottom: 20px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+    .service-content {
+      .service-list {
+        width: 100%;
+        height: 330px;
+        .more {
+          margin: 10px auto 0;
+        }
+      }
+    }
+}
+
+/* ---------
+    律师团队成员
+   --------- */
+.team {
+  width: 100%;
+  .team-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    .team-title {
+      .service-title;
+    }
+
+    .team-member {
+      width: 25%;
+      padding: 30px 20px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      text-align: center;
+
+      .photo {
+        width: 100%;
+        height: 250px;
+        background: url(../IMG/1.jpg) no-repeat top center/cover;
+        margin-bottom: 30px;
+      }
+
+      .photo2 { background: url(../IMG/2.jpg) no-repeat top center/cover; }
+      .photo3 { background: url(../IMG/3.jpg) no-repeat top center/cover; }
+      .photo4 { background: url(../IMG/4.jpg) no-repeat top center/cover; }
+      .name {
+        font-size: 18px;
+        color: @color;
+        margin-top: 30px;
+      }
+      .position {
+        color: #bbb;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .field {
+        color: @color;
+        font-size: 16px;
+      }
+
+      .describe {
+        margin-top: 10px;
+        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #777;
+      }
+    }
+  }
+}
+
+/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .team {
+    .team-content {
+      .team-member {
+        padding: 30px 10px;
+      }
+    }
+  }
+}
+
+
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+  .team {
+    .team-content {
+      .team-member {
+        width: 50%;
+        padding: 30px 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    .team-content {
+      .team-member {
+        width: 100%;
+        padding: 30px 10px;
+      }
+    }
+  }
+}
+
+/* -------------
+    案例新闻公告
+   ------------- */
+
+.legal-cases {
+  width: 100%;
+  background-color: #eee;
+
+  .cases-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+
+    .cases-title {
+      .service-title;
+    }
+
+    .box {
+      width: 48%;
+      float: left;
+      margin: 0 1%;
+      margin-top: 50px;
+    }
+
+    .tab {
+      color: #777;
+      font-size: 18px;
+      display: inline-block;
+      width: 90px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .left {
+      .tab-box {
+        text-align: right;
+        margin-bottom: 30px;
+        .tab {
+          margin-left: 4%;
+          transition: background .5s, color .5s;
+        }
+        .tab:hover {
+          background: @color;
+          color: #fff;
+        }
+        .active {
+          background: @color;
+          color: #fff;
+        }
+      }
+
+      .img {
+        width: 100%;
+        height: 200px;
+        background: url(../IMG/bg1.jpg) no-repeat top left;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        color: @color;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 46px;
+        white-space: nowrap;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+      }
+      p {
+        width: 90%;
+        color: #777;
+        line-height: 22px;
+        font-size: 14px;
+      }
+      .more {
+        margin-top: 16px;
+        width: 130px;
+        height: 28px;
+        display: block;
+        line-height: 28px;
+        border: 1px solid @color;
+        text-align: center;
+        color: @color;
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+      }
+
+      .more:hover {
+        background-color: @color;
+        color: #fff;
+      }
+    }
+    
+    .right {
+      .tab-box {
+        text-align: left;
+        margin-bottom: 30px;
+        .tab {
+          margin-right: 4%;
+          transition: background .5s, color .5s;
+        }
+        .tab:hover {
+          background: #FEC955;
+          color: #fff;
+        }
+        .active {
+          background: #FEC955;
+          color: #fff;
+        }
+      }
+
+      .list {
+        margin-bottom: 30px;
+        time {
+          display: inline-block;
+          width: 70px;
+          font-size: 18px;
+          color: #989898;
+          border-right: 1px solid #E2E2E2;
+          text-align: right;
+          padding-right: 10px;
+          float: left;
+          span {
+            font-size: 12px;
+            text-align: right;
+          }
+        }
+
+        .text {
+          width: 80%;
+          margin-left: 15px;
+          float: left;
+          cursor: pointer;
+          h3 {
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: normal;
+            color: #666;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          p {
+            font-size: 14px;
+            color: #999;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+
+        }
+      }
+
+
+    }
+  }
+}
+
+@media (max-width: 991px) {
+
+  .legal-cases {
+    .cases-content {
+      .box {
+        width: 98%;
+        margin: 0 1%;
+        margin-top: 20px;
+      }
+
+      .left {
+        .tab-box {
+          text-align: left;
+          .tab {
+            margin-right: 4%;
+            margin-left: 0;
+          }
+        }
+
+      }
+
+      .right {
+        margin-top: 70px;
+        .list {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+}
+
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+
+  .legal-cases {
+    .cases-content {
+      .box {
+        width: 96%;
+        margin: 0 2%;
+        margin-top: 20px;
+      }
+
+      .left {
+        .tab-box {
+        }
+        .img {
+          background: url(../IMG/bg1.jpg) no-repeat center center;
+        }
+        h3 {
+          padding-right: 30px;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+      }
+
+      .right {
+        margin-top: 70px;
+        .list {
+          margin-bottom: 20px;
+          time {
+            width: 100px;
+            text-align: left;
+            margin-bottom: 5px;
+          }
+
+          .text {
+            width: 95%;
+            margin-left: 0px;
+            h3 {
+              padding-right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* -------------
+    合作伙伴
+   ------------- */
+
+.cooperation {
+  width: 100%;
+
+  .cooperation-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+
+    .cooperation-title {
+      .service-title;
+    }
+
+    .link-box {
+      width: 100%;
+      margin-top: 60px;
+      .link {
+        display: inline-block;
+        width: 23%;
+        height: 55px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url(../IMG/cooperation1.png) no-repeat top left/contain;
+        background-size: 198px 223px;
+
+      }
+
+      .link + .link {
+        margin-left: 2%;
+      }
+      .link1 {
+        background: url(../IMG/cooperation1.jpg) no-repeat top left/contain;
+      }
+      .link2 {
+        background: url(../IMG/cooperation2.jpg) no-repeat top left/contain;
+      }
+      .link3 {
+        background: url(../IMG/cooperation3.jpg) no-repeat top left/contain;
+      }
+      .link4 {
+        background: url(../IMG/cooperation4.jpg) no-repeat top left/contain;
+      }
+
+    }
+  }
+}
+
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (max-width: 767px) {
+  .cooperation {
+    .cooperation-content {
+
+      .cooperation-title {
+        .small-screen;
+
+        }
+      .link-box {
+        width: 98%;
+        padding: 0 1%;
+        margin-top: 0px;
+        .link {
+          width: 20%;
+          height: 30px;
+
+        }
+
+        .link + .link {
+          margin-left: 2%;
+        }
+      }
+    }
+  }
+
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+  .cooperation {
+    .cooperation-content {
+      .link-box {
+        width: 98%;
+        padding: 0 1%;
+
+        .link {
+          width: 46%;
+          margin-bottom: 20px;
+        }
+
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background: #3C424E;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+
+    .top-tel {
+      line-height: 60px;
+      border-bottom: 1px solid #505A64;
+      width: 98%;
+      margin: 0 1% 20px;
+      display: none;
+      .iconfont {
+        font-size: 28px;
+        color: #fff;
+        margin: 0 10px;
+      }
+      span {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+
+    .contact {
+      float: left;
+      text-align: center;
+      .log{
+        width: 150px;
+        height:50px;
+        background: url(../IMG/LOG.png) no-repeat center center/cover;
+      }
+      .bottom-tel {
+        margin-top: 20px;
+      }
+
+      .iconfont {
+        font-size: 40px;
+        color: #B20A29;
+      }
+
+      p {
+        color: #B20A29;
+        font-size: 20px;
+      }
+
+    }
+    ul {
+      width: 70%;
+      float: right;
+
+      li:last-child {
+        border: none;
+      }
+      li {
+        float: left;
+        width: 18%;
+        height: 180px;
+        margin-left: 2%;
+        border-right: 1px solid #505A64;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        dt {
+          color: #ACACAC;
+          font-size: 16px;
+          width: 80px;
+          padding-bottom: 20px;
+          border-bottom: 2px solid #51C1CF;
+          margin-bottom: 15px;
+        }
+
+        a {
+          color: #B8B6B9;
+          line-height: 30px;
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (max-width: 767px) {
+  .footer {
+    .footer-content {
+      padding-top: 0;
+      .top-tel {
+        display: block;
+      }
+      .contact{
+        display: none;
+      }
+      ul {
+        width: 100%;
+
+        li {
+          width: 18%;
+          margin-left: 2%;
+
+        }
+      }
+    }
+  }
+
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 650px) {
+  .footer {
+    .footer-content {
+
+      ul {
+        .hide {
+          display: none;
+        }
+        li {
+          width: 30%;
+          margin-left: 3.3333%;
+
+
+        }
+      }
+    }
+  }
+}

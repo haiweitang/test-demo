@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>优法云</title>
     <link rel="stylesheet" href="iconfont/iconfont.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <header class="header">
     <div class="header-content clearfix">
-        <p>
+        <p class="hide">
             <i class="iconfont">&#xe600;</i>
             <span>咨询热线 | <a class="tel" href="tel:400-0769-810">400-0769-810</a></span>
         </p>
@@ -29,17 +29,29 @@
         <div class="log">
             <h1 class="text-hide">法当当</h1>
         </div>
-
-        <ul class="nav-list">
+        <button id="open" class="iconfont">&#xe6b3;</button>
+        <ul class="nav-list transverse">
             <li><a class="active" href="#">首页</a></li>
             <li><a href="#">法律咨询</a></li>
-            <li><a class="hide" href="#">律师函</a></li>
-            <li><a class="hide" href="#">纠纷调解</a></li>
-            <li><a class="hide" href="#">打官司</a></li>
-            <li><a class="hide" href="#">诉讼保险</a></li>
+            <li><a href="#">律师函</a></li>
+            <li><a href="#">纠纷调解</a></li>
+            <li><a href="#">打官司</a></li>
+            <li><a href="#">诉讼保险</a></li>
             <li><a href="#">法律常识</a></li>
             <li><a href="#">服务保障</a></li>
         </ul>
+
+        <ul class="nav-list portrait">
+            <li><a class="active" href="#">首页</a></li>
+            <li><a href="#">法律咨询</a></li>
+            <li><a href="#">律师函</a></li>
+            <li><a href="#">纠纷调解</a></li>
+            <li><a href="#">打官司</a></li>
+            <li><a href="#">诉讼保险</a></li>
+            <li><a href="#">法律常识</a></li>
+            <li><a href="#">服务保障</a></li>
+        </ul>
+
     </div>
 </nav>
 <div class="container">
@@ -59,7 +71,7 @@
     <section class="business ">
         <ul class="business-content clearfix">
             <li class="business-list">
-                <i class="iconfont">&#xe6c3;</i>
+                <a href="#"><i class="iconfont">&#xe6c3;</i></a>
                 <div class="text">
                     <h3><a href="#">在线咨询</a></h3>
                     <span>免费</span>
@@ -67,14 +79,14 @@
                 </div>
             </li>
             <li class="business-list">
-                <i class="iconfont">&#xe620;</i>
+                <a href="#"><i class="iconfont">&#xe620;</i></a>
                 <div class="text">
                     <h3><a href="#">律师函</a></h3>
                     <p>向对方提出严正警告，促成纠纷解决</p>
                 </div>
             </li>
             <li class="business-list">
-                <i class="iconfont">&#xe60b;</i>
+                <a href="#"><i class="iconfont">&#xe60b;</i></a>
                 <div class="text">
                     <h3><a href="#">找律师打官司</a></h3>
                     <p>找律师最大化你的权益</p>
@@ -159,7 +171,7 @@
                 <div class="context">
                     <div class="img"></div>
                     <h3>法当当律师代理中国首例超短融违约系列案件</h3>
-                    <p>2017年6月9日，国内“首例超短融违约案”——山东山水水泥集团有限公司超短期融资融卷违约案二审案件在上海市第一人民法院开庭......</p>
+                    <p>2017年6月9日，国内“首例超短融违约案”—— 山东山水水泥集团有限公司超短期融资融卷违约案二审案件在上海市第一人民法院开庭......</p>
                 </div>
                 <a href="#" class="more">查看详情></a>
             </div>
@@ -173,34 +185,49 @@
                     <li class="list clearfix">
                         <time>06 / 09 <span>2017</span></time>
                         <div class="text">
-                            <h3>特情介入下的贩卖毒品如何认定既遂未遂</h3>
-                            <p>被告人李某系无业人员，与某市吸毒人员王某认识。经某市公安局警队许多日侦擦......</p>
-                        </div>
-                    </li><li class="list clearfix">
-                        <time>06 / 05 <span>2017</span></time>
-                        <div class="text">
-                            <h3>法当当律师协助国寿投成功发行公司债券</h3>
-                            <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
-                        </div>
-                    </li></li><li class="list clearfix">
-                        <time>06 / 05 <span>2017</span></time>
-                        <div class="text">
-                            <h3>法当当律师协助国寿投成功发行公司债券</h3>
-                            <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
-                        </div>
-                    </li></li><li class="list clearfix">
-                        <time>06 / 05 <span>2017</span></time>
-                        <div class="text">
-                            <h3>法当当律师协助国寿投成功发行公司债券</h3>
-                            <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
-                        </div>
-                    </li></li><li class="list clearfix">
-                        <time>06 / 05 <span>2017</span></time>
-                        <div class="text">
-                            <h3>法当当律师协助国寿投成功发行公司债券</h3>
-                            <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
+                            <a href="#">
+                                <h3>特情介入下的贩卖毒品如何认定既遂未遂</h3>
+                                <p>被告人李某系无业人员，与某市吸毒人员王某认识。经某市公安局警队许多日侦擦......</p>
+                            </a>
                         </div>
                     </li>
+                    <li class="list clearfix">
+                        <time>06 / 05 <span>2017</span></time>
+                        <div class="text">
+                            <a href="#">
+                                <h3>法当当律师协助国寿投成功发行公司债券</h3>
+                                <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list clearfix">
+                        <time>06 / 05 <span>2017</span></time>
+                        <div class="text">
+                            <a href="#">
+                                <h3>法当当律师协助国寿投成功发行公司债券</h3>
+                                <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list clearfix">
+                        <time>06 / 05 <span>2017</span></time>
+                        <div class="text">
+                            <a href="#">
+                                <h3>法当当律师协助国寿投成功发行公司债券</h3>
+                                <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list clearfix">
+                        <time>06 / 05 <span>2017</span></time>
+                        <div class="text">
+                            <a href="#">
+                                <h3>法当当律师协助国寿投成功发行公司债券</h3>
+                                <p>提供专项法律服务的国寿投资控股有限共公司，经中国证券监督委员会的一致认可......</p>
+                            </a>
+                        </div>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -221,7 +248,22 @@
 
 <footer class="footer">
     <div class="footer-content clearfix">
-        <div class="log"></div>
+        <div class="top-tel">
+            <a href="tel:400-0769-810">
+                <i class="iconfont">&#xe608;</i>
+                <span>400-0769-810</span>
+            </a>
+        </div>
+        <div class="contact">
+            <div class="log"></div>
+            <div class="bottom-tel">
+                <a href="tel:400-0769-810">
+                    <i class="iconfont">&#xe608;</i>
+                    <p>400-0769-810</p>
+                </a>
+            </div>
+        </div>
+
         <ul>
             <li>
                 <dl>
@@ -239,13 +281,14 @@
                     <dd><a href="#">新闻</a></dd>
                     <dd><a href="#">公告</a></dd>
                 </dl>
-            </li><li>
+            </li>
+            <li class="hide">
                 <dl>
                     <dt>成功案例</dt>
                     <dd><a href="#">法律案例</a></dd>
                 </dl>
             </li>
-            <li>
+            <li class="hide">
                 <dl>
                     <dt>我们团队</dt>
                     <dd><a href="#">团队律师</a></dd>
@@ -263,6 +306,28 @@
         </ul>
     </div>
 </footer>
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function () {
+
+        (function ($) {
+            var offon = true;
+            $('#open').click(function(){
+                if(offon){
+                    $('.portrait').animate({height: 400},300);
+                    $(this).html('&#xe6d5;');
+                }
+                else {
+                    $('.portrait').animate({height: 0},300);
+                    $(this).html('&#xe6b3;');
+                }
+                offon = !offon;
+            })
+        })(jQuery)
+
+    })
+</script>
 </body>
 </html>
 
