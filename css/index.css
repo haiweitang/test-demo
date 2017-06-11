@@ -5,7 +5,7 @@
   ==========*/
 body {
   background-color: #fff;
-  height: 2000px;
+  margin-bottom: 0;
 }
 .clearfix:after {
   content: ' ';
